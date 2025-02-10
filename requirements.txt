@@ -1,0 +1,12 @@
+daas_py_common
+daas_py_config
+build
+django
+djangorestframework
+djangorestframework-simplejwt
+psycopg2
+python-dotenv
+setuptools
+wheel
+pysolr
+whitenoise

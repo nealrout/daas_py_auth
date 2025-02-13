@@ -36,11 +36,11 @@ def login(request):
     # Call PostgreSQL function to get facilities for the user
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM {DB_PROC_GET_USER_FACILITY}(%s);", [user.id])
-        facilities = [row[0] for row in cursor.fetchall()]  # Fetch facilities list
+        facility = [row[0] for row in cursor.fetchall()]  # Fetch facilities list
 
     # Generate JWT token
     refresh = RefreshToken.for_user(user)
-    refresh["facilities"] = facilities  # Inject facilities into token
+    refresh["facility"] = facility  # Inject facilities into token
 
     return Response({
         "access": str(refresh.access_token),

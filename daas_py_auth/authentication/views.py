@@ -9,7 +9,7 @@ from manage import logger, config
 import base64
 
 configs = config.get_configs()
-DB_PROC_GET_USER_FACILITY = configs.DB_PROC_GET_USER_FACILITY
+DB_FUNC_GET_USER_FACILITY = configs.DB_FUNC_GET_USER_FACILITY
 
 @api_view(["POST"])
 def login(request):
@@ -35,7 +35,7 @@ def login(request):
 
     # Call PostgreSQL function to get facilities for the user
     with connection.cursor() as cursor:
-        cursor.execute(f"SELECT * FROM {DB_PROC_GET_USER_FACILITY}(%s);", [user.id])
+        cursor.execute(f"SELECT * FROM {DB_FUNC_GET_USER_FACILITY}(%s);", [user.id])
         facility = [row[0] for row in cursor.fetchall()]  # Fetch facilities list
 
     # Generate JWT token

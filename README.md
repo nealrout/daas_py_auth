@@ -40,7 +40,8 @@ python -m build daas_py_auth
 - 
 
 ## Miscellaneous
-
+To create new super user on the server
+python manage.py createsuperuser
 
 ## Contact
 Neal Routson  

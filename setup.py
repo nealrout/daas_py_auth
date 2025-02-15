@@ -11,13 +11,13 @@ def parse_requirements(filename):
     return requirements
 
 setup(
-    name="daas_py_api",
+    name="daas_py_auth",
     version="0.1.0",
     packages=find_packages(),
     include_package_data=True, 
     author="Neal Routson",
     author_email="nroutson@gmail.com",
-    description="Django generic API project that can be resued for any domain.",
+    description="Django authentication and authorization service.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/nealrout/daas_py_api",

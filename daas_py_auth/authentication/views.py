@@ -27,7 +27,6 @@ def login(request):
     
     username, password = decoded_credentials.split(":", 1)
 
-    logger.debug(username)
     # Authenticate user
     user = authenticate(username=username, password=password)
     if user is None:
